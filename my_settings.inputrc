@@ -1,0 +1,28 @@
+# Always start from the default system
+$include /etc/inputrc
+
+# Up/Down completes history based on current line
+"\eOA": history-search-backward
+"\e[A": history-search-backward
+"\eOB": history-search-forward
+"\e[B": history-search-forward
+
+# Suppress hidden files on Tab completion
+set match-hidden-files off
+
+# Tab complete regardless of case
+set completion-ignore-case on
+
+# Put / after directory names and * after executables
+#You may not like this ,but give it a try
+#set visible-stats on
+
+# List possible completions on Tab, Alt-s cycles
+set show-all-if-ambiguous on
+"\es": menu-complete
+
+# For bash only
+$if Bash
+  # Expand history in line when typing space
+  Space: magic-space
+$endif
